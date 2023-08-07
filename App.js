@@ -1,13 +1,15 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, Text, View } from 'react-native';
-import Saludar
+import Saludar from './src/components/Saludar';
 
-from './src/components/Saludar';
+
+
+
 export default function App() {
   return (
     <View style={styles.container}>
       <Text>Hola mundo</Text>
 
-      <Saludar firstname="Gaby" lastname={12312} />
       <Saludar firstname="Gaby" lastname="Lopez"/>
       <Saludar firstname="Cesar" lastname="Huyta" />
 
