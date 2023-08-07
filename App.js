@@ -7,9 +7,9 @@ export default function App() {
     <View style={styles.container}>
       <Text>Hola mundo</Text>
 
-      <Saludar/>
-      <Saludar name="Gaby" />
-      <Saludar name="Gustavo" />
+      <Saludar firstname="Gaby" lastname={12312} />
+      <Saludar firstname="Gaby" lastname="Lopez"/>
+      <Saludar firstname="Cesar" lastname="Huyta" />
 
 
     </View>
