@@ -1,6 +1,7 @@
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React, { useState,useEffect } from 'react'
 import {getPokemonsApi,getPokemonDetailsByUrlApi} from '../api/pokemon'
+import PokemonList from '../components/PokemonList';
 
 
 export default function   () {
@@ -48,7 +49,7 @@ const loadPokemons = async () =>{
 }
   return (
     <View>
-      <Text>  </Text>
+      <PokemonList pokemons={pokemons} />
     </View>
   )
 }
