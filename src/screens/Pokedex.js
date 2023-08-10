@@ -4,10 +4,9 @@ import {getPokemonsApi,getPokemonDetailsByUrlApi} from '../api/pokemon'
 import PokemonList from '../components/PokemonList';
 
 
-export default function   () {
+export default function Pokedex() {
 
 const [pokemons, setPokemons] = useState([]);
-// console.log('pokemons -->',pokemons);
 const [nextUrl, setNextUrl] = useState(null);
 
 useEffect(()=>{
