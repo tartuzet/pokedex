@@ -1,21 +1,30 @@
 import { View, Text,StyleSheet,Image,Pressable } from 'react-native'
 import React from 'react'
+import getColorByPokemonType from '../utils/getColorByPokemonType';
 
 export default function PokemonCard(props) {
 
     const {pokemon} = props;
 
-const goToPokemon = () =>{
+    console.log(pokemon.type)
 
-    console.log(`Vamos al pokemon:${pokemon.name}`)
-}
+    const pokemonColor = getColorByPokemonType(pokemon.type)
+    
+    // console.log(pokemonColor)
+
+
+    const bgStyles = {backgroundColor:pokemonColor , ...styles.bgStyles}
+
+    const goToPokemon = () =>{
+      console.log(`Vamos al pokemon:${pokemon.name}`)
+    }
 
   return (
     <View style={styles.container}>
     <Pressable onPress={goToPokemon}>
         <View style={styles.card}>
             <View style={styles.spacing}>
-                <View style={styles.bgCard}>
+                <View style={bgStyles}>
                     <Text style={styles.number}>#{`${pokemon.order}`.padStart(3, 0)}</Text>
                     <Text style={styles.name}>{pokemon.name}</Text>
                     <Image source={{ uri: pokemon.image }} style={styles.image} />
@@ -55,6 +64,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     fontSize: 15,
     fontWeight: "bold",
+    textTransform: 'capitalize'
   },
   number: {
     position: "absolute",
@@ -62,5 +72,10 @@ const styles = StyleSheet.create({
     right: 10,
     fontSize: 11,
     color: "#fff"
+  },
+  bgStyles:{
+    flex:1,
+    borderRadius: 15,
+    padding:10  
   }
 })
