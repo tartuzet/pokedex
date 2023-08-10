@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { SafeAreaView } from 'react-native'
 import React, { useState,useEffect } from 'react'
 import {getPokemonsApi,getPokemonDetailsByUrlApi} from '../api/pokemon'
 import PokemonList from '../components/PokemonList';
@@ -36,7 +36,7 @@ const loadPokemons = async () =>{
         name: pokemonDetails.name,
         type: pokemonDetails.types[0].type.name,
         order: pokemonDetails.order,
-        imagen:
+        image:
           pokemonDetails.sprites.other["official-artwork"].front_default,
       });
     }
@@ -48,8 +48,8 @@ const loadPokemons = async () =>{
 
 }
   return (
-    <View>
+    <SafeAreaView>
       <PokemonList pokemons={pokemons} />
-    </View>
+    </SafeAreaView>
   )
 }
