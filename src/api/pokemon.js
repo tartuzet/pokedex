@@ -1,6 +1,4 @@
-// import { API_HOST} from '../utils/constans';
 import {API_URL} from "@env"
-
 
 export async function getPokemonsApi(endpointUrl){
 

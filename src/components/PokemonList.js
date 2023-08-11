@@ -5,15 +5,10 @@ import PokemonCard from './PokemonCard';
 
 
 export default function PokemonList(props) {
-
-  
-const  {pokemons, loadPokemons,isNext} = props;
-
-const loadMore = () =>{
-
-  console.log("cargando mas pokemons ...");
-  loadPokemons();
-}
+  const  {pokemons, loadPokemons,isNext} = props;
+  const loadMore = () =>{
+    loadPokemons();
+  };
 
   return (
 
@@ -26,11 +21,8 @@ const loadMore = () =>{
         contentContainerStyle={styles.flatListContentContainer}
         onEndReached={isNext && loadMore}
         onEndReachedThreshold={0.1}
-        ListFooterComponent={
-          isNext && (<ActivityIndicator size="large" style={styles.spinner} color="#AEAEAE" />)
-        }
-        />
-
+        ListFooterComponent={isNext && (<ActivityIndicator size="large" style={styles.spinner} color="#AEAEAE" />)}
+    />
 
   )
 }
@@ -44,3 +36,9 @@ const styles = StyleSheet.create({
     marginBottom:60
   }
 })
+
+
+
+
+
+  
