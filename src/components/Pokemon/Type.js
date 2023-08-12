@@ -5,7 +5,7 @@ import getColorByPokemonType from '../../utils/getColorByPokemonType'
 export default function Type(props) {
 
     const {types} = props;
-    console.log (types); 
+    // console.log (types); 
   return (
     <View style={syles.content}>
 
