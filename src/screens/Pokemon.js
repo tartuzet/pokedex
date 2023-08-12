@@ -2,6 +2,8 @@ import {ScrollView } from 'react-native'
 import React, {useState, useEffect}from 'react'
 import {getPokemonDetailsByIdApi} from '../api/pokemon'
 import Header from '../components/Pokemon/Header';
+import Type from '../components/Pokemon/Type';
+
  
 export default function Pokemon(props) {
 
@@ -35,6 +37,11 @@ export default function Pokemon(props) {
       type={pokemon.types[0].type.name}
       id={pokemon.id}
       />
+
+
+      <Type types= {pokemon.types} /> 
+
+
 
     </ScrollView>
   )

@@ -11,9 +11,8 @@ export default function Header(props) {
     const color = getColorByPokemonType(type);
     const bgStyles = {backgroundColor:color , ...styles.bg}
 
-    console.log(image);
-
-    console.log(color);
+    // console.log(image);
+    // console.log(color);
 
   return (
     <>
