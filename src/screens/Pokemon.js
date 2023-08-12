@@ -1,12 +1,12 @@
-import { View, Text,Button } from 'react-native'
+import {ScrollView } from 'react-native'
 import React, {useState, useEffect}from 'react'
 import {getPokemonDetailsByIdApi} from '../api/pokemon'
+import Header from '../components/Pokemon/Header';
  
 export default function Pokemon(props) {
 
   const {route:{params},navigation} = props;
   const id  = params.id;
-  console.log(id);
 
   const [pokemon,setPokemon] = useState(null)
   useEffect(()=>{
@@ -14,8 +14,6 @@ export default function Pokemon(props) {
     (async()=>{
       try {
         const response = await getPokemonDetailsByIdApi(id)
-        console.log(response);
-
         setPokemon(response);
 
       } catch (error) {
@@ -29,13 +27,15 @@ export default function Pokemon(props) {
   if (!pokemon) return null;
 
   return (
-    <View>
-      <Text>Pokemon: {pokemon.name} </Text>
-      
-      <Button title="Go to Pokedex" onPress={() => navigation.navigate('PokedexScreen')} />
-      <Button title="Go back" onPress={() => navigation.goBack()} />
+    <ScrollView>
+      <Header 
+      name={pokemon.name} 
+      order={pokemon.order} 
+      image={pokemon.sprites.other["official-artwork"].front_default} 
+      type={pokemon.types[0].type.name}
+      id={pokemon.id}
+      />
 
-
-    </View>
+    </ScrollView>
   )
 }
