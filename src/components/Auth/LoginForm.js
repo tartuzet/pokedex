@@ -3,10 +3,13 @@ import React,{useState} from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {user,userDetails } from '../../utils/userDB';
+import useAuth from '../../hooks/useAuth';
 
 export default function LoginForm() {
 
   const [error,setError] = useState('');  //Se usa estado para poner error si la credenciales son incorrectas
+
+  const {login} = useAuth(); //Se usa el hook que creamos para useAuth
 
 //Crear configuracion del forkik 
 const formik = useFormik({
@@ -22,6 +25,7 @@ const formik = useFormik({
     setError('El usuario ó contraseña no son correctos');
     console.log('El usuario o contraseña no son correctos');
   }else{
+    login(userDetails);
     console.log('Los datos son correctos');
     console.log('userDetails',userDetails);
 
