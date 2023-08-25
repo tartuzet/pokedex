@@ -1,9 +1,12 @@
 import { View, Text , StyleSheet, TextInput, Button, Keyboard} from 'react-native';
-import React from 'react';
+import React,{useState} from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
+import {user,userDetails } from '../../utils/userDB';
 
 export default function LoginForm() {
+
+  const [error,setError] = useState('');  //Se usa estado para poner error si la credenciales son incorrectas
 
 //Crear configuracion del forkik 
 const formik = useFormik({
@@ -11,8 +14,19 @@ const formik = useFormik({
   validationSchema : Yup.object(validationSchema()), // validaciones y se hace funcion para el esquema
   validateOnChange:false, //Sirve para quitar validaciones en tiempo real
   onSubmit: (formValues)=>{    //la funciona que se va a ejecutar cuando el formulario sea correcto y formValues llegan los datos del formualrio
-    console.log('formulario enviado');
-    console.log('formValues',formValues);
+ 
+  setError(''); // Se setea el error
+  const  {username, password} = formValues;
+  
+  if (username!== user.username || password!== user.password){
+    setError('El usuario ó contraseña no son correctos');
+    console.log('El usuario o contraseña no son correctos');
+  }else{
+    console.log('Los datos son correctos');
+    console.log('userDetails',userDetails);
+
+
+  }
 
   }
 
@@ -46,6 +60,8 @@ const formik = useFormik({
 
       <Text style={styles.error}>{formik.errors.username}</Text>
       <Text style={styles.error}>{formik.errors.password}</Text>
+      <Text style={styles.error}>{error}</Text>
+
 
 
     </View>
