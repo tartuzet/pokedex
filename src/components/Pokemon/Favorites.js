@@ -7,7 +7,9 @@ import {addPokemonFavoriteApi,isPokemonFavoriteApi} from '../../api/favorite';
 export default function Favorites(props) {
 
     const {id} = props;
-    const [isFavorite, setIsFavorite] = useState(undefined);
+    const [isFavorite, setIsFavorite] = useState(undefined); //Este estado sirve para ver si existe o no y agregar o remover el elemento
+    const [reloadCheck, setReloadCheck] = useState(false); //Este estado sirve para cambiar en tiempo real el corazon
+
 
 
     useEffect(() => {
@@ -21,9 +23,12 @@ export default function Favorites(props) {
           throw error;
          }
       })()
-    }, [id])
+    }, [id,reloadCheck])
     
     
+    const onReloadCheckFavorite = () =>{
+      setReloadCheck(prev => !prev );
+    }
 
     const removeFavorite = ()=>{
       console.log('remove');
@@ -32,7 +37,12 @@ export default function Favorites(props) {
     const addFavorite = async()=>{
         console.log('añadir favoritos',id);
 
-        await addPokemonFavoriteApi(id);
+        try {
+          await addPokemonFavoriteApi(id);
+          onReloadCheckFavorite();
+        } catch (error) {
+          console.log(error);
+        }
     }
 
 
