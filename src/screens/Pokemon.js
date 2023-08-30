@@ -30,7 +30,7 @@ export default function Pokemon(props) {
       onPress={() => navigation.goBack()} 
       />
     })
-  },[navigation,params,pokemon,auth])
+  },[navigation,params,pokemon,auth]) // se pone esto para no bajarlo al if
 
   useEffect(()=>{
 
