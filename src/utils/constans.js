@@ -1,4 +1,4 @@
-export const FAVORITE_STORAGE = 'favorites';
+export const FAVORITE_STORAGE = 'pokemonsfavoritos';
 
 export const POKEMON_TYPE_COLORS = {
     normal: "#A8A878",
