@@ -4,9 +4,10 @@ import {FAVORITE_STORAGE} from '../utils/constans';
 
 export async function getPokemonsFavoriteApi(){
     try {
-        
-        const response = await AsyncStorage.getItem(FAVORITE_STORAGE);
-        return response;
+    
+        const response = await AsyncStorage.getItem(FAVORITE_STORAGE)
+        const responseJSON = JSON.parse(response)
+        return responseJSON ? responseJSON : []
 
 
     } catch (error) {
@@ -20,16 +21,8 @@ export async function getPokemonsFavoriteApi(){
 export async function addPokemonFavoriteApi(id){
 
     try {
-        const favorites = [];
+        const favorites = await getPokemonsFavoriteApi();
         favorites.push(id);
-        
-        //
-        console.log('stringify',JSON.stringify(favorites));
-        const  prueba = favorites.join(' ')
-        console.log('join',prueba);
-        const pruebaconflat = favorites.flat();
-        console.log('flat',pruebaconflat);
-        //
 
         await AsyncStorage.setItem(FAVORITE_STORAGE,JSON.stringify(favorites));
 

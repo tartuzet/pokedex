@@ -7,7 +7,7 @@ export default function Favorite() {
 
   const checkFavorites = async ()=> {
     const response =  await getPokemonsFavoriteApi();
-    console.log(response)
+    console.log(response);
 
   }
 
