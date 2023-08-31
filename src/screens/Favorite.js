@@ -13,9 +13,9 @@ export default function Favorite() {
   const {auth} = useAuth();
 
 
-  useFocusEffect(
+  useFocusEffect( //Sirve para que se actualize cuando entre a favoritos
 
-    useCallback(()=>{
+    useCallback(()=>{ //Sirve para que se actualize cuando entre a favoritos
 
       if(auth){
         (async()=>{
@@ -23,11 +23,11 @@ export default function Favorite() {
   
           const pokemonsArray =[];
   
-          console.log('response',response);
+          // console.log('response',response);
   
           for await (const id of response) {
   
-            console.log(id);
+            //console.log(id);
             const pokemonDetails = await getPokemonDetailsByIdApi(id);
             pokemonsArray.push({
               id: pokemonDetails.id,
@@ -40,7 +40,7 @@ export default function Favorite() {
   
           setPokemons([...pokemons, ...pokemonsArray]);
   
-          console.log(pokemons);
+          // console.log(pokemons);
 
         })()
       }

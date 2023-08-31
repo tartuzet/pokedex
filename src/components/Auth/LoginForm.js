@@ -23,11 +23,11 @@ const formik = useFormik({
   
   if (username!== user.username || password!== user.password){
     setError('El usuario ó contraseña no son correctos');
-    console.log('El usuario o contraseña no son correctos');
+    // console.log('El usuario o contraseña no son correctos');
   }else{
     login(userDetails);
-    console.log('Los datos son correctos');
-    console.log('userDetails',userDetails);
+    // console.log('Los datos son correctos');
+    // console.log('userDetails',userDetails);
 
 
   }

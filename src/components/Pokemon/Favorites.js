@@ -31,7 +31,7 @@ export default function Favorites(props) {
     }
 
     const removeFavorite = async ()=>{
-      console.log('remove');
+      // console.log('remove');
 
       try {
 
@@ -44,7 +44,7 @@ export default function Favorites(props) {
     }
   
     const addFavorite = async()=>{
-        console.log('añadir favoritos',id);
+        // console.log('añadir favoritos',id);
 
         try {
           

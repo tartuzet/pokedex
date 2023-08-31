@@ -13,16 +13,12 @@ export default function Pokedex() {
   const loadPokemons = useCallback (async () =>{
     try {
       setLoading(true);
-      // const response = await getPokemonsApi(nextUrl);
-      // setNextUrl(response.next);
 
       const {results: pokemonsResponse, next: nextPokemonListUrl} = await getPokemonsApi(nextUrl);
       setNextUrl(nextPokemonListUrl);
 
       const pokemonsArray =[];
 
-
-      // for await (const pokemon of response.results){
       for await (const pokemon of pokemonsResponse) {
         const pokemonDetails = await getPokemonDetailsByUrlApi(pokemon.url);
         pokemonsArray.push({
