@@ -18,7 +18,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package":"com.tartuzet.pokedex",
+      "package": "com.tartuzet.pokedex",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -26,6 +26,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a0b4843d-f156-45e9-9749-39f4f621111c"
+      }
     }
   }
 }
