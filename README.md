@@ -10,4 +10,5 @@ Datos para el login:
 usuario: tartuzet 
 contraseña: 123123
 
-<span>![</span><span>Imagen no disponible</span><span>]</span><span>(</span><span>https://raw.githubusercontent.com/tartuzet/podekex/master/assets/Pokedex.png</span><span>)</span>
+<img width="333" alt="Favoritos" src="https://github.com/tartuzet/pokedex/assets/20690869/7919e9da-bdb3-4a8f-a6a6-0f1c81cfb943">
+
