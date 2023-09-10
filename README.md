@@ -17,9 +17,7 @@ Tecnologías utilizadas:
 <img src="https://github.com/tartuzet/pokedex/assets/20690869/f1060b88-8277-4e11-b87d-1e4b25f7e3de"  width="30%" >
 
 
-
 Datos para el login:
-
 
 
 Usuario  | Contraseña
