@@ -6,4 +6,8 @@ La información se obtiene de la API de PokéAPI (pokeapi.co), una fuente confia
 Si te gustan los Pokemon y quieres aprender más sobre ellos, esta app es para ti.
 
 Esta aplicación está disponible para compilar en IOS y Android. 
-Uso de almacenamiento local y conexión con el usuario: tartuzet contraseña:123123
+Datos para el login:
+usuario: tartuzet 
+contraseña: 123123
+
+<span>![</span><span>Imagen no disponible</span><span>]</span><span>(</span><span>https://raw.githubusercontent.com/tartuzet/podekex/master/assets/Pokedex.png</span><span>)</span>
