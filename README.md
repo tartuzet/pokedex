@@ -2,6 +2,14 @@
 
 Este repositorio contiene una app de pokedex creada en React Native con Expo. La app te permite explorar todos los pokemons existentes, ver sus tipos, estadísticas, habilidades y más. La información se obtiene de la API de PokéAPI [pokeapi.co](https://pokeapi.co) (pokeapi.co), una fuente confiable y actualizada de datos sobre el universo de Pokemon. Si te gustan los Pokemon y quieres aprender más sobre ellos, esta app es para ti.
 
+<p align="center">
+  <img src="https://github.com/tartuzet/pokedex/assets/20690869/cde743d3-9c1c-425c-81eb-4cc77266a006">
+</p>
+
+
+
+
+
 Tecnologías utilizadas:
 
 
